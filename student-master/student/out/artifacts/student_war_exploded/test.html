@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+<table border="1" cellpadding="20" cellspacing="0">
+    <thead>
+    <tr>
+        <td>序号</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>成绩</td>
+    </tr>
+    </thead>
+    <tbody id="contain"></tbody>
+</table>
+<script src="js/jquery/jquery-3.4.1.js"></script>
+<script>
+    // 根据数组的内容,生成页面中的table表格
+    // 建立数组
+    var arr = [
+        ['小明', '男', 18, '70',],
+        ['小红', '女', 19, '80',],
+        ['小李', '男', 20, '60',],
+        ['小白', '女', 21, '90',],
+    ];
+    // 定义变量,存储生成的字符串内容,使用 += 拼接字符串形式
+    console.log($.type(arr));
+    console.log(arr);
+    var str = '';
+    //外层循环,生成tr
+    for (var i = 0; i <= arr.length - 1; i++) {
+        // 外层循环生成tr标签,循环几次,就生成几个tr标签
+        // 因为tr标签中还要有td内容,要将两个tr标签,分开,写成拼接的形式
+        str += '<tr>';
+
+        // 第一个单元格是单独生成的,不参与内层循环,是 当前 外层循环 索引下标+1
+        str += `<td>${i + 1}</td>`;
+
+        //当前行,对应的二维数组，循环的对象是 arr[i] ,
+        //生成 arr[i] 的所有的索引下标，通过索引下标,获取对应的数据。
+        // 起始数值是0 终止数值是 arr[i]的最大索引下标，arr[i]的length-1
+        for (var j = 0; j <= arr[i].length - 1; j++) {
+            console.log("内循环"+j);
+            // 每一个单元的内容,就是当前二维数组单元的数据内容
+            // 获取二维数组, 数组变量[一维索引][二维索引] 一维索引是i 二维索引是j
+            str += `<td>${arr[i][j]}</td>`;
+        }
+        str += '</tr>';
+    }
+    // 将定义好的内容,写入到taody标签中
+    contain.innerHTML = str;
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    padding-left: 410px;
+    font-size: 35px;
+    color: white;
+}
+
+body, html {
+    font: 12px/1.5 "微软雅黑", Arial;
+    color: #666;
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.login-form {
+    float: left;
+    margin-top: 100px;
+    margin-left: 435px;
+    font-size: 16px;
+    width: 320px;
+    height: 160px;
+    padding: 20px;
+    background: #fff;
+}
+
+.login-btn {
+    width: 120px;
+    background: #019BE5;
+    font-size: 17px;
+    color: white;
+    border: #019BE5;
+    margin-left: 100px;
+}
